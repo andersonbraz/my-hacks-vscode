@@ -79,6 +79,63 @@ $ npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 }
 ```
 
-## Conslusão
+## Conclusão
 
 Essa é a maneira que encontrei para que as duas extensões possam conviver juntas e não haja conflito na hora de salvar/formatar os arquivos. Eu adiciono as configurações do Prettier dentro do arquivo de configurações do ESLint e desabilito a extensão do Prettier para arquivos dos tipos .js e .jsx.
+
+
+## My Hacks
+
+[Anderson Braz](https://www.andersonbraz.com);
+
+## Arquivo do Workspace (.vscode\settings.json)
+
+```javascript
+{
+  // habilitar o format on save (formatar ao salvar)
+  "editor.formatOnSave": true,
+  // configurar as ações que devem ser executadas ao salvar um arquivo
+  "editor.codeActionsOnSave": {
+    // executar o ESLint
+    "source.fixAll.eslint": true
+  },
+  // desabilitar o plugin do Prettier para arquivos .js e .jsx
+  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  //
+  "eslint.options": {
+    "useEslintrc": false,
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "env": {
+      "es6": true
+    }
+  },
+  "javascript.suggestionActions.enabled": false
+}
+```
+
+## Arquivo do Workspace (.eslintrc.json)
+
+```javascript
+{
+  "extends": ["prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ]
+  }
+}
+```
+
+## Arquivo do Workspace (.jshintrc)
+
+```javascript
+{
+    "esversion": 6
+}
+```
