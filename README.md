@@ -83,6 +83,7 @@ $ npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 
 Essa é a maneira que encontrei para que as duas extensões possam conviver juntas e não haja conflito na hora de salvar/formatar os arquivos. Eu adiciono as configurações do Prettier dentro do arquivo de configurações do ESLint e desabilito a extensão do Prettier para arquivos dos tipos .js e .jsx.
 
+---
 
 ## My Hacks
 
