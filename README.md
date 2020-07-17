@@ -2,7 +2,7 @@
 
 ## ESLint + Prettier 
 
-[Fonte: ROBERTO ACHAR](::https://robertoachar.dev/blog/eslint-prettier)
+[Fonte: ROBERTO ACHAR](https://robertoachar.dev/blog/eslint-prettier)
 
 Como resolver o conflito entre o ESLint e o Prettier
 
